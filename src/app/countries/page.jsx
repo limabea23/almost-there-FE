@@ -26,6 +26,9 @@ export default function Countries() {
       setCountries(response.data);
       if (!region) {
         setAllCountries(response.data);
+        const handleCardClick = (char) => {
+          toast.info(`Você clicou em ${char.name} que está ${char.status}`);
+      };
       }
     } catch (error) {
       console.error("Erro ao carregar países:", error);
